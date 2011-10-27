@@ -93,7 +93,7 @@ public class ToCassandraBag extends EvalFunc<Tuple> {
                 builder.append(OUTPUT_DELIM);
             }
         }
-        
+
         UDFContext context = UDFContext.getUDFContext();
         Properties property = context.getUDFProperties(ToCassandraBag.class);
         property.setProperty(getSchemaKey(), builder.toString());

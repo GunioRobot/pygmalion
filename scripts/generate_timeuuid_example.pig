@@ -20,7 +20,7 @@ account_w_timeuuid = FOREACH account GENERATE
   first_name AS first_name,
   last_name AS last_name,
   GenerateTimeUUID() AS my_time_uuid;
-  
+
 account_cassandra = FOREACH account_w_timeuuid GENERATE FLATTEN(ToCassandraBag(key, first_name, last_name, my_time_uuid)) AS (
   key: chararray,
   first_name: chararray,
